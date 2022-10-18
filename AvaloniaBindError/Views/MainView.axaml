@@ -14,8 +14,8 @@
         HorizontalAlignment="Center"
         VerticalAlignment="Center">
         <LayoutTransformControl.LayoutTransform>
-            <ScaleTransform ScaleX="{Binding ScaleX}"
-                            ScaleY="{Binding ScaleY}">
+            <ScaleTransform ScaleX="{Binding ScaleX, TargetNullValue=1.0, FallbackValue=1.0}"
+                            ScaleY="{Binding ScaleY, TargetNullValue=1.0, FallbackValue=1.0}">
             </ScaleTransform>
         </LayoutTransformControl.LayoutTransform>
 
