@@ -1,0 +1,46 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:AvaloniaBindError.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AvaloniaBindError.Views.MainView"
+             Foreground="White"
+             Background="#171C2C">
+  <Design.DataContext>
+    <viewModels:MainViewModel />
+  </Design.DataContext>
+    <LayoutTransformControl
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center">
+        <LayoutTransformControl.LayoutTransform>
+            <ScaleTransform ScaleX="{Binding ScaleX}"
+                            ScaleY="{Binding ScaleY}">
+            </ScaleTransform>
+        </LayoutTransformControl.LayoutTransform>
+
+        <Viewbox Stretch="Uniform" StretchDirection="Both" Height="450">
+            <LayoutTransformControl ZIndex="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <LayoutTransformControl.LayoutTransform>
+                    <RotateTransform Angle="45"/>
+                </LayoutTransformControl.LayoutTransform>
+                <TextBlock IsVisible="False" FontWeight="ExtraBold" FontFamily="Roboto" Text="{Binding Greeting}">
+                    <TextBlock.Styles>
+                        <Style Selector="TextBlock">
+                            <Style.Animations>
+                                <Animation IterationCount="{Binding AnimationDuration}" Duration="0:0:1">
+                                    <KeyFrame Cue="0%">
+                                        <Setter Property="IsVisible" Value="True"/>
+                                    </KeyFrame>
+                                    <KeyFrame Cue="50%">
+                                        <Setter Property="IsVisible" Value="False"/>
+                                    </KeyFrame>
+                                </Animation>
+                            </Style.Animations>
+                        </Style>
+                    </TextBlock.Styles>
+                </TextBlock>
+            </LayoutTransformControl>
+        </Viewbox>
+  </LayoutTransformControl>
+</UserControl>
