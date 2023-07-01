@@ -1,5 +1,5 @@
 # AvaloniaBindError
- avalonia.xplat with bind error
+I found error in avalonia.xplat with bind error
 
 After start desktop project (Windows 10), we have:
    - [Binding]Error in binding to '{ {M11:1 M12:0} {M21:0 M22:1} {M31:0 M32:0} }'.'ScaleX': 'Null value in expression '{empty}' at ''.'(ScaleTransform #47145209)
